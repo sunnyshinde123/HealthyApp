@@ -38,12 +38,11 @@ function App() {
   }
 
   let handleBuyItemsDouble =(id)=>{
+    console.log('clicked to times')
     setItems((prev)=>{
       return prev.map((list)=>{
-        if(list.id==id){
-          if(list.isBuy==true){
+        if(list.id==id && list.isBuy==true){
             return {...list, isBuy:false}
-          }
         }else{
           return list;
         }
