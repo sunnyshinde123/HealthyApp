@@ -1,0 +1,11 @@
+.container{
+    border: 2px solid green;
+    margin: auto;
+    margin-top: 10%;
+    width: 35%;
+    border-radius: 5px;
+    min-width: 350px;
+    padding: 2rem;
+    box-shadow: 0rem 0rem 1rem green;
+    background-color: white;
+}
