@@ -27,9 +27,23 @@ function App() {
 
   let handleBuyItems = (id) =>{
     setItems((prev)=> {
-      prev.map((list)=>{
+      return prev.map((list)=>{
         if(list.id==id){
           return {...list, isBuy:true}
+        }else{
+          return list;
+        }
+      })
+    })
+  }
+
+  let handleBuyItemsDouble =(id)=>{
+    setItems((prev)=>{
+      return prev.map((list)=>{
+        if(list.id==id){
+          if(list.isBuy==true){
+            return {...list, isBuy:false}
+          }
         }else{
           return list;
         }
@@ -43,7 +57,7 @@ function App() {
       <h2 className={Style.heading}>Healthy App</h2>
       <InputCart handleKeyDown={handleKeyDown}></InputCart>
       {!items.length && <p style={{color:"red", fontWeight:"900", fontSize:"1.2rem", textAlign:"center"}}>I am Hungry!!</p>}
-      <ListItems list={items} handleRemoveItems={handleRemoveItems} handleBuyItems={handleBuyItems}></ListItems>
+      <ListItems list={items} handleRemoveItems={handleRemoveItems} handleBuyItems={handleBuyItems} handleBuyItemsDouble={handleBuyItemsDouble}></ListItems>
     </Container>
       
     </>
